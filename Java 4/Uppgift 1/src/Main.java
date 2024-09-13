@@ -15,7 +15,7 @@ public class Main
         String input;
         int currentScorer = 0;
         int totalScore = 0;
-        int averageScore = 0;
+        int averageScore;
         int highScore = 0;
 
         System.out.println("Who played in today's game? write done when you're finished.");

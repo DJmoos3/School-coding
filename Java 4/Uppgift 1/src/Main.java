@@ -39,7 +39,7 @@ public class Main
             sc.nextLine();
         }
 
-        highScore += points.get(0);
+        highScore += points.getFirst();
 
         for (int i = 1; i  < user.size(); i++)
         {

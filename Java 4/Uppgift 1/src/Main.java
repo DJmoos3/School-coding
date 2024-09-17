@@ -39,11 +39,9 @@ public class Main
             sc.nextLine();
         }
 
-        highScore += points.getFirst();
-
-        for (int i = 1; i  < user.size(); i++)
+        for (int i = 0; i  < user.size(); i++)
         {
-            if (points.get(i - 1) < points.get(i))
+            if (highScore < points.get(i))
             {
                 currentScorer = i;
                 highScore = points.get(i);

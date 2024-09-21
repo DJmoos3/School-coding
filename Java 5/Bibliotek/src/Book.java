@@ -27,7 +27,7 @@ public class Book
         return this.available;
     }
 
-    public boolean loanBook()
+    public void loanBook()
     {
         if(available)
         {
@@ -36,23 +36,13 @@ public class Book
                 this.reserveQueue.removeFirst();
             }
             this.available = false;
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
-    public boolean returnBook()
+    public void returnBook()
     {
         if(!available)
         {
             this.available = true;
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 

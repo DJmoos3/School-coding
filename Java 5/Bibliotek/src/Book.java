@@ -2,15 +2,21 @@ import java.util.ArrayList;
 
 public class Book
 {
-    String title;
-    String author;
+    private String title;
+    private String author;
 
-    int publishingYear;
-    int edition;
+    private int publishingYear;
+    private int edition;
 
     private boolean available;
 
     ArrayList<String> reserveQueue;
+
+    public Book()
+    {
+        this.available = true;
+        this.reserveQueue = new ArrayList<>();
+    }
 
     public Book(String title, String author, int publishingYear, int edition)
     {
@@ -60,5 +66,37 @@ public class Book
         for (String s : this.reserveQueue) {
             System.out.println(s);
         }
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setPublishingYear(int publishingYear) {
+        this.publishingYear = publishingYear;
+    }
+
+    public int getPublishingYear() {
+        return publishingYear;
+    }
+
+    public void setEdition(int edition) {
+        this.edition = edition;
+    }
+
+    public int getEdition() {
+        return edition;
     }
 }

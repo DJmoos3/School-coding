@@ -61,40 +61,40 @@ public class Library
 
     private void addBook()
     {
-        String title;
-        String author;
-
-        int publishingYear;
-        int edition;
+        Book newBook = new Book();
 
 
         System.out.println("What book do you want to add?");
         System.out.println("Start with title:");
-        title = scanner.nextLine();
+        newBook.setTitle(scanner.nextLine());
 
         System.out.println("Author:");
-        author = scanner.nextLine();
+        newBook.setAuthor(scanner.nextLine());
+
 
         System.out.println("Year it was published:");
-        publishingYear = scanner.nextInt();
+        newBook.setPublishingYear(scanner.nextInt());
         scanner.nextLine();
 
         System.out.println("What edition:");
-        edition = scanner.nextInt();
+        newBook.setEdition(scanner.nextInt());
         scanner.nextLine();
 
-        books.add(new Book(title, author, publishingYear, edition));
+        books.add(newBook);
         System.out.println("Book has been added.");
     }
     private void search ()
     {
         String title;
         String answer;
+
+        boolean running;
+
         System.out.println("What book are you looking for?");
         title = scanner.nextLine();
-        boolean running;
+
         for (Book book : books) {
-            if (book.title.equalsIgnoreCase(title))
+            if (book.getTitle().equalsIgnoreCase(title))
             {
                 System.out.println("We've got that book");
                 System.out.println("Do you wanna borrow said book?");
@@ -114,7 +114,7 @@ public class Library
                         }
                         else
                         {
-                            System.out.println("The book is reserved by someone else");
+                            System.out.println("The book is already reserved by someone else");
                             running = false;
                         }
                     }
@@ -173,14 +173,14 @@ public class Library
         title = scanner.nextLine();
         for (Book book : books)
         {
-            if (book.title.equalsIgnoreCase(title))
+            if (book.getTitle().equalsIgnoreCase(title))
             {
                 book.returnBook();
                 System.out.println("Thanks for returning the book.");
             }
             else
             {
-                System.out.println("That's not on of our books");
+                System.out.println("That's not one of our books");
             }
         }
     }

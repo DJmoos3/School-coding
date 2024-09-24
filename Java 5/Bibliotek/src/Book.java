@@ -18,7 +18,7 @@ public class Book
         this.reserveQueue = new ArrayList<>();
     }
 
-    public Book(String title, String author, int publishingYear, int edition)
+    /*public Book(String title, String author, int publishingYear, int edition)
     {
         this.title = title;
         this.author = author;
@@ -26,7 +26,7 @@ public class Book
         this.edition = edition;
         this.available = true;
         this.reserveQueue = new ArrayList<>();
-    }
+    }*/
 
     public boolean isAvailable()
     {
@@ -55,10 +55,10 @@ public class Book
     @Override
     public String toString()
     {
-        return  "Title: " + this.title +
-                " Author: " + this.author +
-                " Publishing year: " + this.publishingYear +
-                " Edition: " + this.edition;
+        return  "Title: " + getTitle() +
+                " Author: " + getAuthor() +
+                " Publishing year: " + getPublishingYear() +
+                " Edition: " + getEdition();
     }
     public void reserve(String name)
     {
